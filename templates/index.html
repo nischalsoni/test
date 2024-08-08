@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Numbers</title>
+    <script>
+        function runScript() {
+            const form = document.getElementById('number-form');
+            form.submit();
+            document.getElementById('download-btn').style.display = 'block';
+        }
+
+        function downloadResults() {
+            window.location.href = '/download_results';
+        }
+    </script>
+</head>
+<body>
+    <h1>Add Two Numbers</h1>
+    <form id="number-form" action="/run_script" method="post">
+        <label for="num1">Number 1:</label>
+        <input type="number" name="num1" id="num1" required><br><br>
+        <label for="num2">Number 2:</label>
+        <input type="number" name="num2" id="num2" required><br><br>
+        <button type="button" onclick="runScript()">Run Script</button>
+    </form>
+    <br>
+    <button id="download-btn" style="display:none;" onclick="downloadResults()">Download Results</button>
+</body>
+</html>
